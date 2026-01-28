@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samut Sari - Many & Different Topics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: white;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #667eea;
+        }
+
+        nav button.active {
+            background-color: #667eea;
+            border-bottom: 3px solid #fff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .blog-post {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .blog-post h2 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-post .date {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .trivia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .trivia-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .trivia-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .trivia-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .trivia-card p {
+            margin-bottom: 0.5rem;
+        }
+
+        .trivia-answer {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 4px;
+            color: #555;
+        }
+
+        .trivia-answer.show {
+            display: block;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav button {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .blog-post {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 Samut Sari - Many & Different Topics</h1>
+        <p>Explore a diverse collection of topics, insights, and fun trivia</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><button class="nav-btn active" data-section="blog">Blog</button></li>
+            <li><button class="nav-btn" data-section="trivia">Trivia</button></li>
+            <li><button class="nav-btn" data-section="about">About</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Blog Section -->
+        <div id="blog" class="section active">
+            <div class="blog-post">
+                <h2>Welcome to Samut Sari</h2>
+                <p class="date">January 28, 2026</p>
+                <p>Samut Sari - a Filipino word meaning "many and different topics" - is your go-to destination for exploring diverse subjects, from science and technology to culture, history, and lifestyle.</p>
+                <p>This blog celebrates the beauty of learning about different things. Whether you're interested in how things work, fascinating historical events, practical life tips, or just expanding your knowledge, you'll find something interesting here!</p>
+            </div>
+
+            <div class="blog-post">
+                <h2>The Power of Continuous Learning</h2>
+                <p class="date">January 25, 2026</p>
+                <p>In our fast-paced world, the ability to learn new things continuously is more valuable than ever. From mastering new skills to understanding different cultures, learning opens doors and expands our perspective.</p>
+                <p>The best learners are curious people who ask questions, explore diverse topics, and aren't afraid to venture into unfamiliar territory. This blog is designed for curious minds like yours!</p>
+            </div>
+
+            <div class="blog-post">
+                <h2>Why Diversity in Knowledge Matters</h2>
+                <p class="date">January 20, 2026</p>
+                <p>Having knowledge across different fields helps us make better connections, understand complex problems, and think creatively. People who know a little bit about many things often become great innovators and problem-solvers.</p>
+                <p>Samut Sari celebrates this philosophy by covering a wide range of topics. Each article is a stepping stone to becoming more knowledgeable, well-rounded, and informed about the world around us.</p>
+            </div>
+
+            <div class="blog-post">
+                <h2>Exploring Your Interests</h2>
+                <p class="date">January 15, 2026</p>
+                <p>Whether you're passionate about technology, intrigued by history, curious about science, or interested in personal development, there's always something new to discover and explore.</p>
+                <p>Use Samut Sari as your guide to venture into new topics. You might find your next favorite subject or passion. The world of knowledge is vast and exciting - let's explore it together!</p>
+            </div>
+        </div>
+
+        <!-- Trivia Section -->
+        <div id="trivia" class="section">
+            <h2 style="margin-bottom: 2rem; color: #667eea; text-align: center; font-size: 2rem;">Test Your Knowledge on Diverse Topics!</h2>
+            <div class="trivia-grid">
+                <div class="trivia-card">
+                    <h3>❓ Question 1</h3>
+                    <p><strong>What does "Samut Sari" mean in Filipino?</strong></p>
+                    <button onclick="toggleAnswer(this)" style="background: #667eea; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-top: 0.5rem;">Reveal Answer</button>
+                    <div class="trivia-answer">
+                        <strong>Answer:</strong> "Samut Sari" is a Filipino phrase meaning "many and different topics." It perfectly describes a diverse collection of subjects and knowledge.
+                    </div>
+                </div>
+
+                <div class="trivia-card">
+                    <h3>❓ Question 2</h3>
+                    <p><strong>What is the fastest animal on Earth?</strong></p>
+                    <button onclick="toggleAnswer(this)" style="background: #667eea; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-top: 0.5rem;">Reveal Answer</button>
+                    <div class="trivia-answer">
+                        <strong>Answer:</strong> The peregrine falcon is the fastest animal on Earth, reaching speeds of up to 240 mph (386 km/h) during its hunting dive.
+                    </div>
+                </div>
+
+                <div class="trivia-card">
+                    <h3>❓ Question 3</h3>
+                    <p><strong>Which planet is the largest in our solar system?</strong></p>
+                    <button onclick="toggleAnswer(this)" style="background: #667eea; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-top: 0.5rem;">Reveal Answer</button>
+                    <div class="trivia-answer">
+                        <strong>Answer:</strong> Jupiter is the largest planet in our solar system. It's so massive that over 1,300 Earths could fit inside it!
+                    </div>
+                </div>
+
+                <div class="trivia-card">
+                    <h3>❓ Question 4</h3>
+                    <p><strong>How many bones does an adult human have?</strong></p>
+                    <button onclick="toggleAnswer(this)" style="background: #667eea; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-top: 0.5rem;">Reveal Answer</button>
+                    <div class="trivia-answer">
+                        <strong>Answer:</strong> An adult human has 206 bones. Babies are born with about 270 bones, but as they grow, some bones fuse together.
+                    </div>
+                </div>
+
+                <div class="trivia-card">
+                    <h3>❓ Question 5</h3>
+                    <p><strong>What year was the internet publicly released?</strong></p>
+                    <button onclick="toggleAnswer(this)" style="background: #667eea; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-top: 0.5rem;">Reveal Answer</button>
+                    <div class="trivia-answer">
+                        <strong>Answer:</strong> The World Wide Web became publicly available in 1991. It revolutionized how information is shared globally.
+                    </div>
+                </div>
+
+                <div class="trivia-card">
+                    <h3>❓ Question 6</h3>
+                    <p><strong>Which language has the most native speakers?</strong></p>
+                    <button onclick="toggleAnswer(this)" style="background: #667eea; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-top: 0.5rem;">Reveal Answer</button>
+                    <div class="trivia-answer">
+                        <strong>Answer:</strong> Mandarin Chinese has the most native speakers in the world, with over 900 million people speaking it as a first language.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div id="about" class="section">
+            <div class="blog-post">
+                <h2>About This Website</h2>
+                <p>Samut Sari is dedicated to sharing knowledge and curiosity across many different topics. It's a space where diverse interests come together and learning is celebrated.</p>
+                
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #667eea;">What You'll Find Here:</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>Blog Posts:</strong> Explore articles about science, history, technology, culture, lifestyle, and so much more.</li>
+                    <li><strong>Trivia Challenges:</strong> Test your knowledge with fun facts and questions about diverse subjects.</li>
+                    <li><strong>Learning Resources:</strong> Discover insights and information to expand your understanding of the world.</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #667eea;">Why Samut Sari?</h3>
+                <p>"Samut Sari" is a beautiful Filipino phrase meaning "many and different topics." We believe that the best way to understand the world is by being curious about everything - from nature and science to history and culture.</p>
+
+                <p style="margin-top: 1rem;"><strong>Last Updated:</strong> January 28, 2026</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Samut Sari - Many & Different Topics. All rights reserved.</p>
+        <p>Celebrating curiosity and the joy of learning</p>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        const navButtons = document.querySelectorAll('.nav-btn');
+        const sections = document.querySelectorAll('.section');
+
+        navButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const sectionId = button.getAttribute('data-section');
+                
+                // Remove active class from all buttons and sections
+                navButtons.forEach(btn => btn.classList.remove('active'));
+                sections.forEach(section => section.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding section
+                button.classList.add('active');
+                document.getElementById(sectionId).classList.add('active');
+            });
+        });
+
+        // Trivia toggle functionality
+        function toggleAnswer(button) {
+            const card = button.parentElement;
+            const answer = card.querySelector('.trivia-answer');
+            answer.classList.toggle('show');
+            button.textContent = answer.classList.contains('show') ? 'Hide Answer' : 'Reveal Answer';
+        }
+    </script>
+</body>
+</html>
